@@ -1,0 +1,30 @@
+<table class="table">
+    <tr >
+        <td>id</td>
+        <td>Nombre</td>
+        <td>Fecha Nacimiento</td>
+        <td>Editar</td>
+        <td>Eliminar</td>
+    </tr>
+    <tr *ngFor="let cliente of clientes">
+            <td>{{cliente.id}}</td>
+            <td>{{cliente.fullname}}</td>
+            <td>{{cliente.brith}}</td>
+            <td>
+                <button class="btn bg-dark btn-dark" 
+                routerLink = "[ '/clientes/form', cliente.id ]"
+                >Editar</button>
+            </td>
+            <td>
+                <button class="btn btn-danger"
+                (click)="deleteCliente(cliente)">Eliminar</button>
+            </td>
+    </tr>
+    <tr>
+        <button class="btn btn-primary bg-primary"
+        routerLink="[ '/clientes/form' ]">
+            Crear
+        </button>
+    </tr>
+</table>
+
